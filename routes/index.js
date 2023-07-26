@@ -125,7 +125,7 @@ router.post('/signup',  (req,res) => {
     })
 })
 
-router.get('/fresh/create/admin',  (req,res) => {
+router.get('/start/journey',  (req,res) => {
 
     bcrypt.hash('bunmisegun', 10, (err, hashedPassword) => {
         if(err){
