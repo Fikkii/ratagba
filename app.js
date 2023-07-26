@@ -2,7 +2,7 @@ const express = require('express')
 const passport = require('passport')
 const bodyParser = require('body-parser')
 const session = require('express-session')
-const connectDB = require('./db')
+const db = require('./db')
 const flash = require('connect-flash')
 const cors = require('cors')
 
@@ -33,5 +33,4 @@ app.use((req, res, next) => {
   res.status(404).render('error_page');
 });
 
-connectDB
-  app.listen(3000, () => console.log('App started on port 3000'))
+app.listen(3000, () => console.log('App started on port 3000'))
