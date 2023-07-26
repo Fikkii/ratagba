@@ -33,9 +33,5 @@ app.use((req, res, next) => {
   res.status(404).render('error_page');
 });
 
-connectDB
-  .then(() => {
+connectDB()
   app.listen(3000, () => console.log('App started on port 3000'))}
-  ).catch(() => {
-          console.log(e)
-})
