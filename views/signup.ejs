@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Sign up!!!</title>
+</head>
+<body class="flex-container">
+        <div class="image-container"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clipartbest.com%2Fcliparts%2FncE%2F5rr%2FncE5rr4Ri.jpg&f=1&nofb=1&ipt=222cd9507427cc89b302f323c3f12f2fa5f0e7ea2b5bf2744f583cf37b43f288&ipo=images" alt=""></div>
+        <form action="/signup" method="POST">
+            <% if (typeof error !== 'undefined'){ %>
+                <small style="color: red;"><em><%= error %></em></small>
+            <% } %>
+            <label>Firstname:
+                <input name="firstname" type="text" id="firstname" placeholder="Enter your Firstname" required>
+            </label>
+            <label>Surname:
+                <input name="surname" type="text" placeholder="Enter your Surname" required>
+            </label>
+            <label>Age:
+                <input name="age" type="text" placeholder="Enter your Age" required>
+            </label>
+            <label>Phone:
+                <input name="phone" type="text" placeholder="Phone number" required>
+            </label>
+            <label>Email:
+                <input name="email" type="email" placeholder="Enter your Email" required>
+            </label>
+            <label>Church:
+                <input name="church" type="text" placeholder="Enter your Church" required>
+            </label>
+            <label>Rank:
+                <select name="rank" required>
+                    <option value="intern" default>Intern</option>
+                    <option value="asst-intern">Asst-Intern</option>
+                    <option value="sen-intern">Senior-Intern</option>
+                    <option value="envoy">Envoy</option>
+                    <option value="spec-envoy">Special-Envoy</option>
+                    <option value="sen-envoy">Senior-Envoy</option>
+                    <option value="dean">Dean</option>
+                    <option value="ambassador">Ambassador</option>
+                    <option value="extra-ambassador">Extraordinary</option>
+                    <option value="pleni-ambassador">Plenipotentiary</option>
+                </select>
+            </label>
+            <label>Username:
+                <input type="text" name="username" id="username" placeholder="Enter your Username" required>
+            </label>
+            <label>Password:
+                <input type="password" name="password" id="password" placeholder="Enter your Password" required>
+            </label>
+            <label>confirm Password:
+                <input type="password" name="repassword" id="repassword" placeholder="Confirm Password">
+            </label>
+            <small>By Clicking the signup button, you therefore acclaim that you agree to the <bold>Terms and Condition</bold> and <Bold>Policy</Bold> of our organisation</small>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="/login">Log in</a>
+</body>
+</html>

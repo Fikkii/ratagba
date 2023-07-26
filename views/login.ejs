@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Welcome!!!</title>
+</head>
+<body class="flex-container">
+        <div class="image-container"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clipartbest.com%2Fcliparts%2FncE%2F5rr%2FncE5rr4Ri.jpg&f=1&nofb=1&ipt=222cd9507427cc89b302f323c3f12f2fa5f0e7ea2b5bf2744f583cf37b43f288&ipo=images" alt=""></div>
+        <h1 class="logo">Login</h1>
+        <form action="/login" method="POST">
+            <small><em style="color: red;">
+                <% if(typeof error == 'undefined' || error.length == 0){%>
+                    <strong style="color: gray;">Please enter your username and password</strong>
+                <%}else{%>
+                    <%= error[0] %>
+                <% } %>
+            </em></small>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login...</button>
+        </form>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+<body class="flex-dash">
+    <div class="header">
+        <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clipartbest.com%2Fcliparts%2FncE%2F5rr%2FncE5rr4Ri.jpg&f=1&nofb=1&ipt=222cd9507427cc89b302f323c3f12f2fa5f0e7ea2b5bf2744f583cf37b43f288&ipo=images" alt="">
+        <b><em>Welcome to the Dashboard</em></b>
+    </div>
+    <div class="main">
+        <h2>Add Manual...</h2>
+        <form id="myForm" method="POST" action="/dashboard/manual">
+            <input name="title" placeholder="Enter title" required type="text">
+            <input name="src" placeholder="Enter Image Link" required type="text">
+            <div class="textarea-cont">
+                <textarea rows="10px" id="editor" class="image-container"placeholder="Enter content"  name="content" ></textarea>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <div class="div">
+            <% if (typeof manuals=== 'undefined'){ %>
+                <div></div>
+            <%} else { %>
+                <ul class="dash-list">
+                    <%manuals.forEach(manual => { %>
+                        <li class="dash-item">
+                            <a href="/manual/<%= manual.title %>"><i class="ri-calendar-2-line"></i><%= manual.title %></a>
+                            <a class="btn" href="/dashboard/encounters/delete/<%= manual.title %>">Delete</a>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } %>
+        </div>
+        <h2>Live Source</h2>
+        <form method="POST" action="/dashboard/live">
+            <input name="src" placeholder="Enter Video-Id here" required type="text">
+            <input name="title" placeholder="Enter Video title here" required type="text">
+            <input name="content" placeholder="Enter Video description here"  type="text">
+            <input name="date" placeholder="Enter Video date here"  type="date">
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <div class="div">
+            <% if (typeof lives === 'undefined'){ %>
+                <div></div>
+            <%} else { %>
+                <ul class="dash-list">
+                    <%lives.forEach(live => { %>
+                        <li class="dash-item">
+                            <a href="/live/<%= live.src %>" ><i class="ri-vidicon-2-fill"></i><%= live.title %></a>
+                            <a class="btn" href="/dashboard/live/delete/<%= live.src %>" ><i class="ri-delete-bin-7-line ri-xl"></i></a>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } %>
+        </div>
+    <br>
+    <br>
+    <h2>Upcoming Events</h2>
+    <form method="POST" action="/dashboard/event">
+        <input name="event" placeholder="Enter Your Event here" required type="text">
+        <input name="src" placeholder="Enter Your Event image here" required type="text">
+        <input name="date" placeholder="Enter Your Event Date here" required type="date">
+        <button type="submit" class="btn">Submit</button>
+    </form>
+    <div class="div">
+        <% if (typeof events === 'undefined'){ %>
+            <div></div>
+        <%} else { %>
+            <ul class="dash-list">
+                <%events.forEach(event => { %>
+                    <li class="dash-item"><a href="/event/<%= event.src %>" ><i class="ri-calendar-2-line"></i><%= event.title %></a>  
+                        <a class="btn" href="/dashboard/event/delete/<%= event.title %>"><i class="ri-delete-bin-5-line"></i></a>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } %>
+        </div>
+        <h2>Gallery</h2>
+        <form method="POST" action="/dashboard/gallery">
+            <input name="src" placeholder="Enter image-src here" required type="text">
+            <input name="title" placeholder="Enter image title here" required type="text">
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <div class="card">
+            <% gallery.forEach(picture => { %>
+                <div class="image-container">
+                    <img src="/images/<%= picture.src %>" alt="">
+                </div>
+                <div class="card-title"><%= picture.title %></div>
+                <a class="btn" href="/dashboard/gallery/delete/<%= picture.src %>" ><i class="ri-delete-bin-7-line ri-xl"></i></a>
+            <% }) %>
+        </div>
+        <div class="control-panel">
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Surname</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                    </tr>
+                    <% ambassadors.forEach(user => { %>
+                        <tr>
+                            <td><%= user.firstname %></td>
+                            <td><%= user.surname %></td>
+                            <td><%= user.phone %></td>
+                            <td><%= user.email %></td>
+                            <td><%= user.username %></td>
+                            <td><%= user.password %></td>
+                            <% if (authUser === 'admin') { %>
+                                <td><a class="btn" href="/dashboard/delete-user/<%= user.username %>" style="background-color: red;"><i class="ri-delete-bin-5-line"></i></a></td>
+                            <% } %>
+                        </tr>
+                        <% }) %>
+                    </table>
+            </div>
+            <a class="btn" href="/dashboard/change-password">Change Password</a>
+            <a class="btn" href="/dashboard/signup">Add New Admin</a>
+            <a class="btn" style="background-color: red;" href="/dashboard/clear">Factory Reset</a>           
+        </div>
+    </div>
+</body>
+</html>

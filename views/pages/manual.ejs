@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Welcome to RATAGBA</title>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <div class="brand-image">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clipartbest.com%2Fcliparts%2FncE%2F5rr%2FncE5rr4Ri.jpg&f=1&nofb=1&ipt=222cd9507427cc89b302f323c3f12f2fa5f0e7ea2b5bf2744f583cf37b43f288&ipo=images" class="image-container"></img>
+            </div>
+            <div class="brand-title"><span>RA</span>TAGBA</div>
+        </div>
+        <div id="offnav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/signup">Register</a></li>
+                <li><a href="/login">Login</a></li>
+
+            </ul>
+        </div>
+        <i id="hamburger" class="ri-menu-5-fill ri-lg"></i>
+    </header>
+    <main>
+        <div class="card">
+            <% manuals.forEach(manual => { %>
+                <div class="video-container">
+                    <img src="<%= manual.src %>" alt="">
+                </div>
+                <div class="about">
+                    <strong><%= manual.title %></strong>
+                    <p><%= manual.content %></p>
+                </div> 
+                <% }) %>   
+        </div>
+    </main>
+    <footer>
+        The non abusive usage of these contents are welcomed aside for commercial use which we request that a refrence be made to this website
+        <p>ALL RIGHTS RESERVED!!!</p>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
+
+

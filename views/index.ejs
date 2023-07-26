@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Welcome to RATAGBA</title>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <div class="brand-image">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clipartbest.com%2Fcliparts%2FncE%2F5rr%2FncE5rr4Ri.jpg&f=1&nofb=1&ipt=222cd9507427cc89b302f323c3f12f2fa5f0e7ea2b5bf2744f583cf37b43f288&ipo=images" class="image-container"></img>
+            </div>
+            <div class="brand-title"><span>RA</span>TAGBA</div>
+        </div>
+        <div id="offnav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/signup">Register</a></li>
+                <li><a href="/login">Login</a></li>
+
+            </ul>
+        </div>
+        <i id="hamburger" class="ri-menu-5-fill ri-lg"></i>
+    </header>
+    <main>
+        <div class="board">
+            <div class="board-content">
+                <div class="content-header">it is easy to mould boys than to mend men...</div>
+                <div class="content-body">
+                    Touching the Lives of Boys, Impacting the Eternity of Men...
+                </div>
+                <div class="content-link">Todays Boys Are Men Of Tommorrow</div>
+            </div>
+        </div>
+        <h2><i class="ri-information-line"></i>ABOUT US</h2>
+        <div class="about">
+            <p>The Foundation, Vision, and Ministries of RAN are responses to the lord's command to make disciples of all nations</p>
+            <p>One of the earlist motto of the organisation is "It is easy to mould boys than to mend men"</p>
+            <p>Besides, Today's boys are men of tommorrow who will be saddled up withe the family, social, spiritual, and global shperes pf life..</p>
+            <strong>They Must Not Be Left To Wrong Hands</strong>
+        </div>
+       <div style="background-image: linear-gradient(to top, black 30%, gray 100%);" class="board">
+            <div class="board-image">
+                <img src="/images/order.jpeg" alt="">
+            </div>   
+            <div class="content-header">THE WORTH OF A BOY</div>
+            <div class="worth-body">
+                <p>What will you say is the worth of a boy,
+                    In sins and sorrow, In service and joy,
+                    So much good or bad wrapped up in each life,
+                    To build up and serve or tear down in strife
+                </p>
+
+                <p>A mine of diamond, A bomb to destroy,
+                    Depends entirely on who gets the boy,
+                    The world, the devil, and the flexsh makes their bid,
+                    What will your church do to win these kids
+                </p>
+
+                <p>Some men have hobbies which the invest,
+                    More time and money with real zeal and zest,
+                    But those who phantom life great thrills and joy,
+                    major on making real men out of boys
+                </p>
+            </div>
+        </div>
+        <h2><i class="ri-gallery-line"></i>GALLERY</h2>
+        <div class="grid video">
+            <% gallery.forEach(picture => { %>
+                <div class="card">
+                    <div class="image-container">
+                        <img src="<%= picture.src %>" alt="<%= picture.title %>">
+                    </div>
+                    <div class="card-title"><%= picture.title %></div>
+                    <a href="<%= picture.src %>" download><div class="content-link"><i class="ri-download-2-line"></i></div></a>
+                </div>
+                <% }) %>
+        </div>
+        <h2><i class="ri-vidicon-2-line"></i></i>OUR VIDEOS</h2>
+        <div class="grid video">
+            <% lives.forEach(video => { %>
+                <div class="card">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.src %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-title"><%= video.title %></div>
+                    <a href="https://youtu.be/<%= video.src %>"><div class="content-link"><i class="ri-tv-line"></i></div></a>
+                </div>
+                <% }) %>
+        </div>
+      <h2><i class="ri-git-repository-line"></i>OUR MANUALS</h2>
+        <div class="grid video">
+            <% manuals.forEach(manual => { %>
+                <div class="card">
+                    <div class="content-header"><%= manual.title %></div>
+                    <a href="/manual/<%= manual.title %>"><div class="content-link">Read More...</div></a>
+                </div>
+            <% }) %>
+        </div>
+        <h2><i class="ri-calendar-event-fill"></i>EVENTS</h2>
+        <div class="grid video">
+            <% events.forEach(event => { %>
+                <div class="card">
+                    <div class="image-container">
+                        <img src="<%= event.img %>" alt="<%= event.title %>">
+                    </div>
+                    <div class="card-title"><%= event.title %></div>
+                    <div class="card-title"><%= event.date %></div>
+                </div>
+            <% }) %>
+        </div>
+        <h2><i class="ri-bookmark-3-line"></i>Our Publications</h2>
+        <div class="card">
+            <div class="card-sm">
+                <div class="card-title">Christ Ambassadors</div>
+                <div class="content-link">Download</div>
+            </div>
+            <div class="card-sm">
+                <div class="card-title">Standing Tall</div>
+                <div class="content-link">Download</div>
+            </div>
+            <div class="card-sm">
+                <div class="card-title">R.A Manual</div>
+                <div class="content-link">Download</div>
+            </div>
+        </div>
+        <div class="social">
+            <div class="social-header">STAY CONNECTED</div>
+            <div class="social-link">
+                <a href=""><i class="ri-facebook-circle-fill ri-lg"></i></a>
+                <a href=""><i class="ri-whatsapp-line ri-lg"></i></a>
+                <a href=""><i class="ri-instagram-line ri-lg"></i></a>
+                <a href=""><i class="ri-youtube-line ri-lg"></i></a>
+            </div>
+        </div>
+        <div class="column">
+            <div>
+                <h2><i class="ri-map-pin-line"></i>Our Location</h2>
+                <em class="card-content">12 Muta Road, Adiyan Gasline, Ogun State, Nigeria</em>
+            </div>
+            <div>
+                <h2><i class="ri-file-info-line"></i>For More Info</h2>
+                <em class="card-body">contact us on our gmail at <a href="www.ratagba@gmail.com">ratagba@gmail.com</a></em>
+            </div>
+      </div>
+    </main>
+    <footer>
+        The non abusive usage of these contents are welcomed aside for commercial use which we request that a refrence be made to this website
+        <p>ALL RIGHTS RESERVED!!!</p>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
+
+
